@@ -35,6 +35,14 @@ class MainActivity : ComponentActivity() {
             val recentPdfs by viewModel.recentPdfs.collectAsState()
             val bookmarks by viewModel.bookmarks.collectAsState()
 
+            // Handle PDF opened from external intent (e.g. file manager)
+            DisposableEffect(Unit) {
+                intent?.data?.let { uri ->
+                    viewModel.openPdf(uri)
+                }
+                onDispose { }
+            }
+
             // Keep screen awake setting listener
             DisposableEffect(uiState.settings.keepScreenAwake) {
                 if (uiState.settings.keepScreenAwake) {
