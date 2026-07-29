@@ -1,0 +1,6 @@
+{
+  "name": "PDF Master",
+  "description": "Read, search, bookmark, and organize your PDF documents with continuous scrolling, page thumbnails, text search, and offline support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
